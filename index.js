@@ -45,7 +45,7 @@ const user = {
 };
 const options = {
   "format": 'A4',
-  "orientation": "landscape",
+  "orientation": "portrait",
 
 };
 // const localTemplate = path.join(os.tmpdir(), 'localTemplate.html');

@@ -19,59 +19,116 @@
 
         .footer { position: running(footer); text-align: right; }
         .pagenumber:before { content: counter(page); }
-        .pagecount:before { content: counter(pages); }
+        .pagecount:before { content: counter(pages); }       
+        
 
         .title {
             display: block;
-            margin-top: 10px;
+            margin-top: 25px;
             position: running(title);
             width: 100%;
             text-align: center;
         }
-
         .customer { page-break-inside: avoid; padding-bottom: 2em; }
-        .customer table { width: 100%; border-collapse: collapse; margin-top: 1em; }
-        .customer td { border: solid black thin; padding: 0 2px; }
-        .customer tr:nth-child(odd) { background-color: #f2f2f2; }
-        .customer th { border: solid black thin; text-align: center; background-color: #d4f2cd; }
-        .customer td:nth-child(1) { width: 65%; }
-        .customer .total-row { font-weight: bold; }
-        .customer .total-row td { border: none; background-color: #fff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1em; }
+        td { border: solid black thin; padding: 0 2px; }
+       th { border: solid black thin; text-align: center; background-color: #ebebeb; }
+        .fot{background-color: #ebebeb;}
     </style>
 </head>
 <body>
 <!-- put these before any other content -->
-<h1 class="title">Registro diario de la jornada</h1>
-
+<h1 class="title">REGISTRO DIARIO DE LA JORNADA</h1>
+<h2 class="title"> MES: 5 AÑO: 2018</h2>
 <div class="customer">
-    <div>Customer: {{id}} - {{name}}</div>
-    <div>Address: {{address}}</div>
-    <div>Contact: {{email}} / {{phone}}</div>
-    <div>Customer Since: {{since}}</div>
-    
         <table>
-        <tr>
-            <th>Product Description</th>
-            <th>Qty</th>
-            <th>Value</th>
-            <th>Purchase Date</th>
-        </tr>
-        {{#purchases}}
-        <tr>
-            <td>{{product}}</td>
-            <td>{{quantity}}</td>
-            <td>{{value}}</td>
-            <td>{{date}}</td>
-        </tr>
-        {{/purchases}}
-        <tr class="total-row">
-            <td class="total">TOTAL</td>
-            <td>{{5}}</td>
-            <td>{{7}}</td>
-            <td></td>
-        </tr>
-    </table>
+            <thead>
+                <tr>
+                    <th rowspan="1" colspan="5" scope="col">EMPRESA: 26</th>
+                    <th rowspan="1" colspan="5" scope="col">TRABAJADOR: 28</th>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">NOMBRE:</th>
+                    <td colspan="3">Marvax S.L</td>
+                    <th scope="row" colspan="2">NOMBRE:</th>
+                    <td colspan="3">Señor  x</td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">CIF:</th>
+                    <td colspan="3">B4624530</td>
+                    <th scope="row" colspan="2">NIF:</th>
+                    <td colspan="3">NIF SEÑOR X</td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">CCC:</th>
+                    <td colspan="3">4601612345</td>
+                    <th scope="row" colspan="2">NAF:</th>
+                    <td colspan="3">5678645</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">Dia del mes</th>
+                    <th colspan="2" scope="colgroup">MAÑANA</th>
+                    <th colspan="2"  scope="colgroup">TARDE</th>
+                    <th rowspan="2" colspan="1" scope="col">HORAS ORDI.</th>
+                    <th rowspan="2" colspan="1" scope="col">HORAS EXTRA</td>
+                    <th rowspan="2" colspan="1" scope="col">HORAS COMPL.</th>
+                    <th rowspan="2" style="width: 20%">FIRMA</th>
+                </tr>
+                <tr>
+                    <th scope="col">ENTRADA</th>
+                    <th scope="col">SALIDA</th>
+                    <th scope="col">ENTRADA</th>
+                    <th scope="col">SALIDA</th>
+              </tr>
+            </thead>
+               
+            <tfoot>               
+                <tr class="fot">
+                    <th colspan="1" scope="row">TOTAL MES</th>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>                   
+                    <td colspan="1" scope="col"></td>
+                </tr>
+            </tfoot>
+               
+            <tbody>               
+                <tr>
+                    <th scope="row"> 1</th>
+                    <td colspan="1" >09:00</td>
+                    <td colspan="1" scope="col">14:00</td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col">5</td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>                   
+                    <td colspan="1" scope="col"></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>En cumplimiento de la obligación establecida en Art. 12.4 c) Y Art. 35.5 del Real Decreto Legislativo 2/2015 de 23 de Octubre, por el que se aprueba el texto refundido de la Ley del Estatuto de los trabajadores.</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="1" colspan="1" scope="col">Firma de la Empresa</th>
+                    <th rowspan="1" colspan="1" scope="col">Firma del Trabajador</th>
+                </tr>                
+            </thead>
+            <tfoot>
+                <tr>
+                    <th scope="row" colspan="2"></th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td colspan="1" scope="col" style="height:50px;"></td>
+                    <td  colspan="1" scope="col" style="height:50px;"></td>
+                </tr>
+            </tbody>
+        </table>
 </div>
-
-
 </body></html>
