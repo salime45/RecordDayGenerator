@@ -5,6 +5,7 @@
 
 # dependencies
 /node_modules
+/report.pdf
 
 # IDEs and editors
 /.idea

@@ -7,31 +7,28 @@ const data = require('./data');
 const inFile = './report.html';
 const outPdf = './report.pdf';
 
-// const data = {
-//   company: "Freddy's Fish Farm",
-//   phone: '619-555-1212',
-//   owner: {
-//     firstName: 'Freddy',
-//     lastName: 'Fishman'
-//   },
-//   rewardsCustomer: true
-// };
+const year = 2018;
+const month = 6;
 
-// const source = fs.readFileSync(inFile, 'utf8');
-
-// const template = handlebars.compile(source, { strict: true });
-// const result = template(data);
-// console.log(result);
-// fs.writeFileSync(outFile, result);
-
-// console.log(data.getDays())
 // data to apply to template file
-const user = {
-  "date": new Date().toISOString(),
-  "title": "Guillaume",
-  "body": "bodyyyyyyyyy",
-  "days": data.getDays(2018, 6)
+const info = {
+  "empresa": {
+    "id": "26",
+    "name": "Empresa",
+    "cif": "B4624530",
+    "ccc": "4601612345",
+  },
+  "trabajador": {
+    "id": "26",
+    "name": "Trabajador",
+    "nif": "B4624530",
+    "naf": "4601612345",
+  },
+  "month": "5",
+  "year": "2018",
+  "days": data.getDays(year, month)
 };
+
 const options = {
   "format": 'A4',
   "orientation": "portrait",
@@ -39,7 +36,7 @@ const options = {
 };
 
 const source = fs.readFileSync(inFile, 'utf8');
-const html = handlebars.compile(source)(user);
+const html = handlebars.compile(source)(info);
 // console.log("template compiled with user data", html);
 
 pdf.create(html, options).toFile(outPdf, function (err, res) {

@@ -74,39 +74,37 @@
         .fot {
             background-color: #b9e2f1;
         }
-
-       
     </style>
 </head>
 
 <body>
     <!-- put these before any other content -->
     <h1 class="title">REGISTRO DIARIO DE LA JORNADA</h1>
-    <h2 class="title"> MES: 5 AÑO: 2018</h2>
+    <h2 class="title"> MES: {{month}} AÑO: {{year}}</h2>
     <div class="customer">
         <table>
             <thead>
                 <tr>
-                    <th rowspan="1" colspan="5" scope="col">EMPRESA: 26</th>
-                    <th rowspan="1" colspan="5" scope="col">TRABAJADOR: 28</th>
+                    <th rowspan="1" colspan="5" scope="col">EMPRESA: {{empresa.id}}</th>
+                    <th rowspan="1" colspan="5" scope="col">TRABAJADOR: {{trabajador.id}}</th>
                 </tr>
                 <tr>
                     <th scope="row" colspan="2">NOMBRE:</th>
-                    <td colspan="3">Marvax S.L</td>
+                    <td colspan="3"> {{empresa.name}}</td>
                     <th scope="row" colspan="2">NOMBRE:</th>
-                    <td colspan="3">Señor x</td>
+                    <td colspan="3">{{trabajador.name}}</td>
                 </tr>
                 <tr>
                     <th scope="row" colspan="2">CIF:</th>
-                    <td colspan="3">B4624530</td>
+                    <td colspan="3"> {{empresa.cif}}</td>
                     <th scope="row" colspan="2">NIF:</th>
-                    <td colspan="3">NIF SEÑOR X</td>
+                    <td colspan="3">{{trabajador.nif}}</td>
                 </tr>
                 <tr>
                     <th scope="row" colspan="2">CCC:</th>
-                    <td colspan="3">4601612345</td>
+                    <td colspan="3"> {{empresa.ccc}}</td>
                     <th scope="row" colspan="2">NAF:</th>
-                    <td colspan="3">5678645</td>
+                    <td colspan="3">{{trabajador.naf}}</td>
                 </tr>
                 <tr>
                     <th rowspan="2">Dia del mes</th>
