@@ -30,7 +30,7 @@ const user = {
   "date": new Date().toISOString(),
   "title": "Guillaume",
   "body": "bodyyyyyyyyy",
-  "purchases": data.getDays(2018, 6)
+  "days": data.getDays(2018, 6)
 };
 const options = {
   "format": 'A4',

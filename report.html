@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!-- saved from url=(0140)https://firebasestorage.googleapis.com/v0/b/amalthea-3c3c3.appspot.com/o/template4.html?alt=media&token=56eeda47-b127-4889-aff9-138a9e99e42b -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <style>
         html {
             font-family: "Open Sans", sans-serif;
@@ -13,14 +16,27 @@
             margin: 10px;
             padding-top: 32px;
 
-            @top-center { content: element(title); }
-            @bottom-right { content: element(footer); }
+            @top-center {
+                content: element(title);
+            }
+            @bottom-right {
+                content: element(footer);
+            }
         }
 
-        .footer { position: running(footer); text-align: right; }
-        .pagenumber:before { content: counter(page); }
-        .pagecount:before { content: counter(pages); }       
-        
+        .footer {
+            position: running(footer);
+            text-align: right;
+        }
+
+        .pagenumber:before {
+            content: counter(page);
+        }
+
+        .pagecount:before {
+            content: counter(pages);
+        }
+
 
         .title {
             display: block;
@@ -29,18 +45,45 @@
             width: 100%;
             text-align: center;
         }
-        .customer { page-break-inside: avoid; padding-bottom: 2em; }
-        table { width: 100%; border-collapse: collapse; margin-top: 1em; }
-        td { border: solid black thin; padding: 0 2px; }
-       th { border: solid black thin; text-align: center; background-color: #ebebeb; }
-        .fot{background-color: #ebebeb;}
+
+        .customer {
+            page-break-inside: avoid;
+            padding-bottom: 2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+
+        td {
+            border: solid black thin;
+            padding: 0 2px;
+            text-align: center;
+            height: 18px;
+        }
+
+        th {
+            border: solid black thin;
+            text-align: center;
+            background-color: #b9e2f1;
+            height: 18px;
+        }
+
+        .fot {
+            background-color: #b9e2f1;
+        }
+
+       
     </style>
 </head>
+
 <body>
-<!-- put these before any other content -->
-<h1 class="title">REGISTRO DIARIO DE LA JORNADA</h1>
-<h2 class="title"> MES: 5 AÑO: 2018</h2>
-<div class="customer">
+    <!-- put these before any other content -->
+    <h1 class="title">REGISTRO DIARIO DE LA JORNADA</h1>
+    <h2 class="title"> MES: 5 AÑO: 2018</h2>
+    <div class="customer">
         <table>
             <thead>
                 <tr>
@@ -51,7 +94,7 @@
                     <th scope="row" colspan="2">NOMBRE:</th>
                     <td colspan="3">Marvax S.L</td>
                     <th scope="row" colspan="2">NOMBRE:</th>
-                    <td colspan="3">Señor  x</td>
+                    <td colspan="3">Señor x</td>
                 </tr>
                 <tr>
                     <th scope="row" colspan="2">CIF:</th>
@@ -67,22 +110,39 @@
                 </tr>
                 <tr>
                     <th rowspan="2">Dia del mes</th>
-                    <th colspan="2" scope="colgroup">MAÑANA</th>
-                    <th colspan="2"  scope="colgroup">TARDE</th>
-                    <th rowspan="2" colspan="1" scope="col">HORAS ORDI.</th>
-                    <th rowspan="2" colspan="1" scope="col">HORAS EXTRA</td>
-                    <th rowspan="2" colspan="1" scope="col">HORAS COMPL.</th>
-                    <th rowspan="2" style="width: 20%">FIRMA</th>
+                    <th colspan="2">MAÑANA</th>
+                    <th colspan="2">TARDE</th>
+                    <th rowspan="2">HORAS ORDI.</th>
+                    <th rowspan="2">HORAS EXTRA</td>
+                        <th rowspan="2">HORAS COMPL.</th>
+                        <th rowspan="2" style="width: 20%">FIRMA</th>
                 </tr>
                 <tr>
                     <th scope="col">ENTRADA</th>
                     <th scope="col">SALIDA</th>
                     <th scope="col">ENTRADA</th>
                     <th scope="col">SALIDA</th>
-              </tr>
+                </tr>
             </thead>
-               
-            <tfoot>               
+
+            <tbody>
+                {{#days}}
+                <tr>
+                    <th scope="row"> {{dia}}</th>
+                    <td colspan="1">{{entrada}}</td>
+                    <td colspan="1" scope="col">{{salida}}</td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col">{{horas}}</td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>
+                    <td colspan="1" scope="col"></td>
+                </tr>
+                {{/days}}
+
+            </tbody>
+
+            <tfoot>
                 <tr class="fot">
                     <th colspan="1" scope="row">TOTAL MES</th>
                     <td colspan="1" scope="col"></td>
@@ -91,32 +151,21 @@
                     <td colspan="1" scope="col"></td>
                     <td colspan="1" scope="col"></td>
                     <td colspan="1" scope="col"></td>
-                    <td colspan="1" scope="col"></td>                   
+                    <td colspan="1" scope="col"></td>
                     <td colspan="1" scope="col"></td>
                 </tr>
             </tfoot>
-               
-            <tbody>               
-                <tr>
-                    <th scope="row"> 1</th>
-                    <td colspan="1" >09:00</td>
-                    <td colspan="1" scope="col">14:00</td>
-                    <td colspan="1" scope="col"></td>
-                    <td colspan="1" scope="col"></td>
-                    <td colspan="1" scope="col">5</td>
-                    <td colspan="1" scope="col"></td>
-                    <td colspan="1" scope="col"></td>                   
-                    <td colspan="1" scope="col"></td>
-                </tr>
-            </tbody>
+
+
         </table>
-        <h4>En cumplimiento de la obligación establecida en Art. 12.4 c) Y Art. 35.5 del Real Decreto Legislativo 2/2015 de 23 de Octubre, por el que se aprueba el texto refundido de la Ley del Estatuto de los trabajadores.</h4>
+        <h4>En cumplimiento de la obligación establecida en Art. 12.4 c) Y Art. 35.5 del Real Decreto Legislativo 2/2015 de 23
+            de Octubre, por el que se aprueba el texto refundido de la Ley del Estatuto de los trabajadores.</h4>
         <table>
             <thead>
                 <tr>
                     <th rowspan="1" colspan="1" scope="col">Firma de la Empresa</th>
                     <th rowspan="1" colspan="1" scope="col">Firma del Trabajador</th>
-                </tr>                
+                </tr>
             </thead>
             <tfoot>
                 <tr>
@@ -126,9 +175,11 @@
             <tbody>
                 <tr>
                     <td colspan="1" scope="col" style="height:50px;"></td>
-                    <td  colspan="1" scope="col" style="height:50px;"></td>
+                    <td colspan="1" scope="col" style="height:50px;"></td>
                 </tr>
             </tbody>
         </table>
-</div>
-</body></html>
+    </div>
+</body>
+
+</html>
